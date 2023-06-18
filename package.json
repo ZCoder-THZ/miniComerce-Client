@@ -1,0 +1,31 @@
+{
+    "name": "my-blog_client",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "axios": "^1.4.0",
+        "flowbite": "^1.6.6",
+        "leaflet": "1.7.1",
+        "@elfalem/leaflet-curve": "0.7.0",
+        "@tweenjs/tween.js": "17.2.0",
+        "pinia": "^2.0.35",
+        "core-js": "^3.6.5",
+        "vue": "^3.2.47",
+        "vue-router": "^4.2.2"
+        
+        
+    },
+    "devDependencies": {
+        "@vitejs/plugin-vue": "^4.1.0",
+        "autoprefixer": "^10.4.14",
+        "postcss": "^8.4.24",
+        "tailwindcss": "^3.3.2",
+        "vite": "^4.2.0"
+    }
+}
