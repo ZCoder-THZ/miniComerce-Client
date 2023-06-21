@@ -49,7 +49,7 @@ export default {
 
 <style scoped>
 #mapContainer {
-    width: 35vw;
-    height: 90vh;
+    width: 100%;
+    height: 50vh;
 }
 </style>

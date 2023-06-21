@@ -1,5 +1,5 @@
 <template>
-    <div class="w-[90%] mx-auto ">
+    <div class="w-[100%] mx-auto overflow-x-hidden">
 
         <div class="my-4 bg-green-300 p-4 w-48">
             <router-link to="/">Home</router-link>
@@ -8,10 +8,10 @@
 
         </div>
 
-        <div class="flex items-center mt-12 mx-auto w-[100%]">
+        <div class="flex  items-center mt-12 mx-auto w-[100%]">
 
-            <div class="flex px-2 justify-center  ">
-                <div class=" w-[300px] min-w-[350px] ml-12 ">
+            <div class="flex px-2 justify-center flex-col md:flex-row lg:flex-row ">
+                <div class=" md:w-[300px] lg:min-w-[350px] md:ml-12 lg:ml-12">
                     <div class="flex justify-between px-3">
                         <h1 class="text-xl text-bold ">Recent Items</h1>
                         <div>
@@ -94,8 +94,8 @@
                     </div>
 
                 </div>
-                <div class="grid w-[70%] ml-4 grid-cols-2 md:grid-cols-3 ">
-                    <div class="hover:bg-gray-200 max-h-[400px] hover:cursor-pointer rounded-md"
+                <div class="grid  grid-cols-2 md:grid-cols-3 ">
+                    <div class="hover:bg-gray-200 max-h-[300px] hover:cursor-pointer rounded-md"
                         v-for="product in filteredProducts">
                         <div class="p-1" @click="productDetail(product.id)">
                             <img class="h-auto max-w-full rounded-lg" :src="product.image" alt="">

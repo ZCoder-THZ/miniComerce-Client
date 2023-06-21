@@ -8,30 +8,39 @@ export default function home() {
     let api = ApiStore().apiRoute;
     let store = productApiStore();
     let categories = ref();
+    let searchValidation = ref(false);
     let products = ref();
     let product = ref();
 
-    const searchKey = ref()
+    const searchKey = ref('')
     const searchOption = ref()
     const search = async () => {
-        if (searchOption.value == 'category') {
-            let data = {
-                category_name: searchKey.value
+        if (!searchKey.value == '') {
+            if (searchOption.value == 'category') {
+                let data = {
+                    category_name: searchKey.value
+
+                }
+                await store.searchProducts(api, data)
+                products.value = await store.products.data
+                console.log(products.value)
+
+            } else {
+                let data = {
+                    product_name: searchKey.value
+
+                }
+                await store.searchProducts(api, data)
+                products.value = await store.products.data
+                console.log(products.value)
+
 
             }
-            await store.searchProducts(api, data)
-            products.value = await store.products.data
-            console.log(products.value)
+
+
 
         } else {
-            let data = {
-                product_name: searchKey.value
-
-            }
-            await store.searchProducts(api, data)
-            products.value = await store.products.data
-            console.log(products.value)
-
+            searchValidation.value = true
         }
     }
     let getProducts = async () => {
@@ -69,6 +78,7 @@ export default function home() {
         filterByCategory,
         search,
         searchKey,
-        searchOption
+        searchOption,
+        searchValidation
     };
 }
