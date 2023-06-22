@@ -60,6 +60,15 @@ export const productApiStore = defineStore('productApi', {
 
             }
 
+        },
+        async updateViewCount(apiRoute, id) {
+            try {
+                const response = await axios.post(`${apiRoute}/products/${id}/views`);
+
+            } catch (error) {
+
+            }
+
         }
     },
 })

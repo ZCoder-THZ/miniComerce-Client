@@ -22,18 +22,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
         <div class="flex justify-between w-[70%] mx-auto py-4">
             <h1 class="text-lg md:text-3xl lg:text-2xl text-bold ">What are u looking for</h1>
             <h1 class="text-lg text-blue-400">See More></h1>
