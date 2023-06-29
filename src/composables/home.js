@@ -3,10 +3,11 @@ import router from '../routes/index';
 import axios from "axios";
 import { ApiStore } from "../store/ApiStore";
 import { productApiStore } from "../store/productApiStore";
-
+import { userApiStore } from "../store/userApiStore";
 export default function home() {
     let api = ApiStore().apiRoute;
     let store = productApiStore();
+    let userStore = userApiStore();
     let categories = ref();
     let searchValidation = ref(false);
     let products = ref();
@@ -14,6 +15,14 @@ export default function home() {
 
     const searchKey = ref('')
     const searchOption = ref()
+
+    const getUserDetail =async (id) => {
+
+        await userStore.getUserDetail(api, id)
+        
+        
+        
+    }
     const search = async () => {
         if (!searchKey.value == '') {
             if (searchOption.value == 'category') {
@@ -79,6 +88,7 @@ export default function home() {
         search,
         searchKey,
         searchOption,
+        getUserDetail,
         searchValidation
     };
 }

@@ -21,13 +21,19 @@
                     <!--  -->
                     <div class="flex flex-col mb-3 px-3 mt-8">
                         <h1 class="text-xl text-gray-700">Sorting</h1>
-                        <div class="flex mx-auto my-4 justify-between w-[60%]">
+                        <!-- <div class="flex mx-auto my-4 justify-between w-[60%]">
+                            <div>
+                                <input type="checkbox" name="" v-model="popular">
+                                <a class="text-lg  text-gray-700">Latest </a>
 
-                            <a class="text-lg  text-gray-700">Latest </a>
-                            <a class="text-lg  text-gray-700">Popular </a>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="" v-model="latest">
+                                <a class="text-lg  text-gray-700">Popular </a>
 
+                            </div>
 
-                        </div>
+                        </div> -->
                     </div>
                     <!--  -->
                     <div class="px-3 mb-3">

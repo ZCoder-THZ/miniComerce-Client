@@ -46,19 +46,37 @@
                 <h1 class="text-lg text-blue-5 text-blue-500">Vie More </h1>
             </div>
         </div>
-        <div class="mx-auto w-[70%] h-64 grid grid-cols-2 md:grid-cols-4 grid-auto-rows-auto">
-            <div class="hover:bg-gray-200 hover:cursor-pointer rounded-md" v-for="(product, key) in products"
-                @click="productDetail(product.id)">
+        <div class="mx-auto w-[70%]  grid grid-cols-2  md:grid-cols-4 grid-flow-row auto-rows-max">
+            <div class="hover:bg-gray-200 relative  rounded-md" v-for="(product, key) in   products  ">
                 <div class="p-2 ">
-                    <img class="h-auto max-w-full rounded-lg" :src="product.image" alt="">
+                    <img class=" max-w-full w-[100%] h-[200px]  rounded-lg hover:cursor-pointer " :src="product.image"
+                        alt="" @click="productDetail(product.id)">
                     <div class="flex justify-between">
                         <h1 class="text-xl">{{ product.item_name }}</h1>
                         <h1 class="text-sm text-blue-500">{{ product.item_condition }}</h1>
                     </div>
-                    <h1 class="tex-2xl text-blue-500">${{ product.price }}</h1>
-                    <div class="flex items-center">
-                        <h1><i class="fa-solid fa-user fa-2x text-white bg-blue-500 pt-2 px-1 rounded-full"></i></h1>
-                        <h1 class="ml-3 text-xl">{{ product.uploader }}</h1>
+                    <div class="flex justify-between">
+                        <h1 class="tex-2xl text-blue-500">${{ product.price }}</h1>
+                        <h1 class="text-xl"><i class="fa-solid fa-eye"></i> {{ product.view_count }}</h1>
+                    </div>
+                    <div class="flex items-center ">
+
+                        <div v-if="product.profile_image" class=" ">
+                            <img @click="getUserDetail(product.user_id)" :src="product.profile_image"
+                                class="w-[40px] h-[40px] rounded-full  " alt="">
+
+                        </div>
+                        <div v-else>
+
+                            <i @click="getUserDetail(product.user_id)"
+                                class="fa-solid fa-user fa-2x text-white bg-blue-500 pt-2 px-1 rounded-full hover:cursor-pointer "></i>
+                        </div>
+
+
+
+
+
+                        <h1 class="ml-3 text-l">{{ product.name }}</h1>
                     </div>
                 </div>
             </div>
@@ -73,7 +91,7 @@
 import home from '../composables/home';
 import { ref } from 'vue';
 
-const { getProducts, productDetail, products, categories, filterByCategory, search, searchKey, searchOption, searchValidation } = home()
+const { getProducts, getUserDetail, productDetail, products, categories, filterByCategory, search, searchKey, searchOption, searchValidation } = home()
 </script>
 
 <style lang="scss" scoped></style>]

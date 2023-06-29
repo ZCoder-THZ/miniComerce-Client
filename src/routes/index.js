@@ -3,6 +3,7 @@ import Articles from '../components/Articles.vue'
 import Home from '../components/Home.vue'
 import Filter from '../components/Filter.vue'
 import Detail from '../components/Detail.vue'
+import UserDetail from '../components/UserDetail.vue'
 const routes = [
     {
         path: '/',
@@ -24,6 +25,11 @@ const routes = [
         path: '/articles',
         component: Articles,
         name: Articles
+    },
+    {
+        path: '/user',
+        component: UserDetail,
+        name: UserDetail
     }
 
 ];
